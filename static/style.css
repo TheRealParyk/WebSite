@@ -1,0 +1,70 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.blog{
+  margin: auto;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 300;
+  color: #2196F3;
+  text-align: center;
+}
+.card {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: #2196F3;
+}
+
+/* Форма */
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для выделения */
+  margin: auto;
+  max-width: 500px;
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+button{
+  background-color: #2196F3; /* Яркий синий цвет */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post{
+    max-width: 800px;
+    margin: auto;
+}
+
+.author{
+    color: gray;
+    text-align: right;
+}

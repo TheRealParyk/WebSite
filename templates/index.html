@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="site">
+        {% for post in posts %}
+            <div class="card">
+                <h2>
+                    <a href="{{ url_for('post', post_id=post.id) }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+
+                <p>{{ post.content }}</p>
+                <p class="author">By: {{ post.username }}</p>
+
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('like_post', post_id=post.id) }}" class="like-button">
+                        {% if post.id in post.liked_posts %}
+                            <img src="/static/like.png" height="25" alt="Liked">
+                        {% else %}
+                            <img src="/static/no_like.png" height="25" alt="Not liked">
+                        {% endif %}
+                        <span>{{ post.likes }}</span>
+                    </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
