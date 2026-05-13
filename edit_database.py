@@ -1,0 +1,23 @@
+import sqlite3
+from werkzeug.security import generate_password_hash
+
+connection = sqlite3.connect("sqlite.db", check_same_thread=False)
+cursor = connection.cursor()
+
+
+cursor.execute('''
+    CREATE TABLE Like (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,'
+        post_id INTEGER NOT NULL,'
+        user_id INTEGER NOT NULL );
+    ''')
+
+cursor.execute('ALERT TABLE post ADD author_id INTEGER;')
+
+cursor.execute('INSERT INTO user VALUES (?, ?, ?)',
+               (1, 'Rocket', generate_password_hash('qwerty123')))
+
+cursor.execute('UPDATE post SET author_id = 1;')
+
+connection.commit()
+connection.close()
